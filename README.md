@@ -1,5 +1,5 @@
 # Dashboard
-Building a personal productivity dashboard to help me track my time and productivity.
+Building a personal finance dashboard to help me track and categorize my finances.
 
 ## Getting Started
 
