@@ -20,7 +20,7 @@ Building a personal finance dashboard to help track and categorize finances.
 
 ## Project Structure
 
-
+```
 finance-tracker/
 ├── backend/
 │ ├── main.py # FastAPI application entry point
@@ -56,6 +56,7 @@ finance-tracker/
 ├── schema.sql # Database schema
 ├── Makefile # Development workflow commands
 └── .gitignore # Git ignore file
+```
 
 ## Getting Started
 
