@@ -33,7 +33,7 @@ export default function SignupPage() {
     
     try {
       await signup(firstName, lastName, email, password);
-      router.push('/'); // Redirect to home page after successful signup
+      router.push('/dashboard'); // Redirect to dashboard after successful signup
     } catch (err) {
       setError(err.message || 'Failed to create account. Please try again.');
     } finally {

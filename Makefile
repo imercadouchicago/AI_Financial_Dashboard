@@ -2,7 +2,7 @@
 
 # Development mode with volume mounts
 dev:
-	docker-compose -f docker-compose.dev.yml up
+	docker-compose -f docker-compose.yml up
 
 # Build all services
 build:

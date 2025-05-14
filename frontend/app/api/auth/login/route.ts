@@ -11,15 +11,14 @@ export async function POST(request: Request) {
     // Connect to database
     const db = await connectToDatabase();
     
-    // Find user by email
+    // Check if user exists. Find user by email
     const [users] = await db.execute(
       'SELECT * FROM users WHERE email = ?',
       [email]
     );
-    
     const user = users[0];
-    
-    // Check if user exists
+
+    // If user does not exist, return error
     if (!user) {
       return NextResponse.json(
         { message: 'Invalid email or password' },
@@ -27,7 +26,7 @@ export async function POST(request: Request) {
       );
     }
     
-    // Verify password
+    // If user exists, verify password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     
     if (!isPasswordValid) {
@@ -37,7 +36,7 @@ export async function POST(request: Request) {
       );
     }
     
-    // Create JWT token
+    // Create JWT token for authentication
     const token = jwt.sign(
       { 
         userId: user.id,
@@ -45,7 +44,7 @@ export async function POST(request: Request) {
         firstName: user.first_name,
         lastName: user.last_name
       },
-      process.env.JWT_SECRET || 'your-secret-key',
+      process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
     
@@ -54,10 +53,10 @@ export async function POST(request: Request) {
       name: 'auth_token',
       value: token,
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-      path: '/',
+      secure: process.env.NODE_ENV === 'production', // Only sends over HTTPS in production
+      sameSite: 'strict',      // Restricts cookie to same-site (not cross-site) requests only
+      maxAge: 60 * 60 * 24 * 7, // Cookie expiration time in seconds (7 days)
+      path: '/',               // Cookie is available across your entire site
     });
     
     // Return user data (excluding password)

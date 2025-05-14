@@ -3,6 +3,14 @@ import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
 import { connectToDatabase } from '@/lib/db';
 
+// Define the type for JWT payload
+interface JwtPayload {
+  userId: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+}
+
 export async function GET() {
   try {
     // Get token from cookies
@@ -12,8 +20,8 @@ export async function GET() {
       return NextResponse.json({ user: null });
     }
     
-    // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    // Verify token with proper typing
+    const decoded = jwt.verify(token, process.env.JWT_SECRET) as JwtPayload;
     
     // Connect to database
     const db = await connectToDatabase();
@@ -23,9 +31,7 @@ export async function GET() {
       'SELECT id, first_name, last_name, email FROM users WHERE id = ?',
       [decoded.userId]
     );
-    
     const user = users[0];
-    
     if (!user) {
       return NextResponse.json({ user: null });
     }

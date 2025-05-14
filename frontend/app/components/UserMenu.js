@@ -10,7 +10,7 @@ const UserMenu = ({ isOpen, onClose }) => {
   const handleLogout = async () => {
     await logout();
     onClose();
-    router.push('/login');
+    router.push('/');
   };
 
   if (!isOpen) return null;

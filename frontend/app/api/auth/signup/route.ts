@@ -11,12 +11,13 @@ export async function POST(request: Request) {
     // Connect to database
     const db = await connectToDatabase();
     
-    // Check if email already exists
+    // Check if email already exists. Find user by email
     const [existingUsers] = await db.execute(
       'SELECT * FROM users WHERE email = ?',
       [email]
     );
-    
+
+    // If user already exists, return error
     if (existingUsers.length > 0) {
       return NextResponse.json(
         { message: 'Email already in use' },
@@ -24,18 +25,19 @@ export async function POST(request: Request) {
       );
     }
     
-    // Hash password
+    // If user does not exist, hash password
     const hashedPassword = await bcrypt.hash(password, 10);
     
-    // Insert new user
+    // Insert new user into database
     const [result] = await db.execute(
       'INSERT INTO users (first_name, last_name, email, password, created_at) VALUES (?, ?, ?, ?, NOW())',
       [firstName, lastName, email, hashedPassword]
     );
-    
+
+    // Get user id from result
     const userId = result.insertId;
     
-    // Create JWT token
+    // Create JWT token for authentication
     const token = jwt.sign(
       { 
         userId,
@@ -43,7 +45,7 @@ export async function POST(request: Request) {
         firstName,
         lastName
       },
-      process.env.JWT_SECRET || 'your-secret-key',
+      process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
     
@@ -57,7 +59,8 @@ export async function POST(request: Request) {
       maxAge: 60 * 60 * 24 * 7, // 7 days
       path: '/',
     });
-    
+
+    // Return user data (excluding password)
     return NextResponse.json({
       message: 'User created successfully',
       user: {
