@@ -3,8 +3,9 @@
 Building a personal finance dashboard to help track and categorize finances.
 
 ## Features
-(In Progress)
 - **User Authentication**: Secure login and signup functionality
+
+(In Progress)
 - **Bank Account Management**: Add and manage multiple bank accounts
 - **Transaction Tracking**: Record and categorize financial transactions
 - **Subscription Management**: Track recurring subscriptions and billing cycles
@@ -24,13 +25,15 @@ Building a personal finance dashboard to help track and categorize finances.
 finance-tracker/
 ├── backend/
 │ ├── main.py # FastAPI application entry point
-│ ├── draft_main.py # Development version of main.py
+│ ├── draft_main.py # Draft extended version of main.py
 │ ├── utils/
 │ │ └── env_validator.py # Environment variable validation
 │ ├── Dockerfile.dev # Development Dockerfile for backend
-│ └── requirements.txt # Python dependencies
+│ └── requirements.txt
 ├── frontend/
 │ ├── app/
+│ │ ├── about # About page
+│ │ ├── analytics # Analytics page
 │ │ ├── api/
 │ │ │ └── auth/ # Authentication API routes
 │ │ ├── components/ # Reusable UI components
@@ -46,16 +49,21 @@ finance-tracker/
 │ ├── lib/
 │ │ ├── db.ts # Database connection utilities
 │ │ └── env.ts # Environment validation
-│ ├── public/ # Static assets
 │ ├── Dockerfile # Production Dockerfile for frontend
 │ ├── Dockerfile.dev # Development Dockerfile for frontend
-│ ├── next.config.js # Next.js configuration
-│ ├── package.json # Frontend dependencies
-│ └── next-env.d.ts # TypeScript declarations for Next.js
-├── docker-compose.yml # Docker Compose configuration
+│ ├── env.d.ts
+│ ├── eslint.config.mjs
+│ ├── next-env.d.ts
+│ ├── next.config.mjs
+│ ├── package.json
+│ ├── postcss.config.mjs
+│ ├── tailwind.config.ts
+│ └── tsconfig.json
+├── .gitignore
+├── docker-compose.yml
+├── Makefile
 ├── schema.sql # Database schema
-├── Makefile # Development workflow commands
-└── .gitignore # Git ignore file
+└── README.md
 ```
 
 ## Getting Started
@@ -87,7 +95,11 @@ make clean
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+![Landing Page](./assets/Landing.png)
+
+![Login Page](./assets/Login.png)
+
 ## Contact
 Isabella Mercado - imercado@uchicago.edu
 
-Project Link: https://github.com/imercadouchicago/dashboard
+Project Link: https://github.com/imercadouchicago/

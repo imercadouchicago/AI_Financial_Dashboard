@@ -1,16 +1,21 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #f5f5dc;
-  --foreground: #1a1a1a;
+/* Move your custom styles to a layer to prevent them from overriding Tailwind */
+@layer base {
+  :root {
+    --background: #f5f5dc;
+    --foreground: #1a1a1a;
+  }
+
+  [data-theme='dark'] {
+    --background: #1a1a1a;
+    --foreground: #f5f5dc;
+  }
 }
 
-[data-theme='dark'] {
-  --background: #1a1a1a;
-  --foreground: #f5f5dc;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+/* Use Tailwind classes instead of direct CSS */
+.body {
+  @apply bg-[var(--background)] text-[var(--foreground)];
 }
