@@ -9,9 +9,9 @@ export default function LandingPage() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       {/* Header with theme toggle and login button */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm">
+      <header className="bg-background shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           {/* Logo/Brand */}
           <div className="flex items-center">
@@ -20,14 +20,13 @@ export default function LandingPage() {
               <div className="absolute bg-indigo-400 w-5 h-7 rounded-r-full right-0"></div>
               <div className="absolute h-3 w-3 bg-white rounded-full top-2 left-3.5"></div>
             </div>
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">Your App Name</h1>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white">FinancialOrganizer</h1>
           </div>
           
           {/* Right side controls */}
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label="Toggle dark mode"
             >
               {theme === 'dark' ? 
@@ -48,20 +47,15 @@ export default function LandingPage() {
         <div className="text-center">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
             <span className="block">Welcome to</span>
-            <span className="block text-indigo-600">Your Amazing App</span>
+            <span className="block text-indigo-600"> FinancialOrganizer</span>
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            A brief description of what your application does and the value it provides to users.
+            This is a simple financial organizer that allows you to track your income and expenses.
           </p>
           <div className="mt-10 sm:flex sm:justify-center">
             <div className="rounded-md shadow">
               <Link href="/login" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                 Get Started
-              </Link>
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <Link href="#features" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                Learn More
               </Link>
             </div>
           </div>

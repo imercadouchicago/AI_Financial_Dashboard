@@ -43,7 +43,7 @@ export default function LoginPage() {
               <div className="absolute bg-indigo-400 w-6 h-8 rounded-r-full right-0"></div>
               <div className="absolute h-4 w-4 bg-white rounded-full top-2 left-4"></div>
             </div>
-            <h1 className="text-white text-3xl font-bold">Only Isabella Allowed!</h1>
+            <h1 className="text-white text-3xl font-bold">FinancialOrganizer</h1>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function LoginPage() {
       {/* Right side - Login form */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-6 bg-white">
         <div className="w-full max-w-md p-8 rounded-lg border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Welcome back, Login</h2>
+          <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Welcome back!</h2>
           
           {/* Error message */}
           {error && (

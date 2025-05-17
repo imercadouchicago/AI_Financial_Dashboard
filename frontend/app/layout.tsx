@@ -1,10 +1,10 @@
 // app/layout.tsx file
 
 import { ReactNode } from 'react';
-import './globals.css';
 import { Providers } from './providers'; // Import the new Providers component
 import { AuthProvider } from './context/AuthContext';
 import { EB_Garamond } from 'next/font/google';
+import './globals.css';
 
 const ebGaramond = EB_Garamond({ subsets: ['latin'] });
 
