@@ -1,13 +1,12 @@
-# Financial Tracking Dashboard
+# Financial Dashboard
 
 Building a personal finance dashboard to help track and categorize finances.
 
 ## Features
-- **User Authentication**: Secure login and signup functionality
-
 (In Progress)
+- **User Authentication**: Secure login and signup functionality
 - **Bank Account Management**: Add and manage multiple bank accounts
-- **Transaction Tracking**: Record and categorize financial transactions
+- **Transaction Tracking**: Categorize financial transactions with AI
 - **Subscription Management**: Track recurring subscriptions and billing cycles
 - **Dashboard Overview**: Visual summary of financial status
 - **Dark/Light Mode**: Toggle between dark and light themes
@@ -22,7 +21,7 @@ Building a personal finance dashboard to help track and categorize finances.
 ## Project Structure
 
 ```
-finance-tracker/
+ai_financial_dashboard/
 ├── backend/
 │ ├── main.py # FastAPI application entry point
 │ ├── draft_main.py # Draft extended version of main.py
@@ -102,4 +101,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Contact
 Isabella Mercado - imercado@uchicago.edu
 
-Project Link: https://github.com/imercadouchicago/Financial_Tracking_Dashboards
+Project Link: https://github.com/imercadouchicago/AI_Financial_Dashboard
