@@ -23,25 +23,24 @@ Building a personal finance dashboard to help track and categorize finances.
 
 ```
 finance-tracker/
-├── backend/
-│ ├── main.py # FastAPI application entry point
-│ ├── draft_main.py # Draft extended version of main.py
-│ ├── utils/
-│ │ └── env_validator.py # Environment variable validation
-│ ├── Dockerfile.dev # Development Dockerfile for backend
-│ └── requirements.txt
-├── frontend/
+├── project/
 │ ├── app/
 │ │ ├── about # About page
 │ │ ├── analytics # Analytics page
 │ │ ├── api/
-│ │ │ └── auth/ # Authentication API routes
+│ │ │ ├── auth/ # Authentication API routes
+│ │ │     ├── login/ # Login route
+│ │ │     ├── logout/ # Logout route
+│ │ │     ├── session/ # Session management route
+│ │ │     └── signup/ # Signup route
+│ │ │ └── users/ # User management API routes
 │ │ ├── components/ # Reusable UI components
 │ │ ├── context/
 │ │ │ └── AuthContext.js # Authentication context provider
 │ │ ├── dashboard/ # Dashboard page
 │ │ ├── login/ # Login page
 │ │ ├── signup/ # Signup page
+│ │ ├── utils/ # Utility functions
 │ │ ├── globals.css # Global styles
 │ │ ├── layout.tsx # Root layout component
 │ │ ├── page.tsx # Landing page
@@ -53,12 +52,14 @@ finance-tracker/
 │ ├── Dockerfile.dev # Development Dockerfile for frontend
 │ ├── env.d.ts
 │ ├── eslint.config.mjs
+│ ├── middleware.ts
 │ ├── next-env.d.ts
-│ ├── next.config.mjs
+│ ├── next.config.js
 │ ├── package.json
 │ ├── postcss.config.mjs
 │ ├── tailwind.config.ts
 │ └── tsconfig.json
+├── .env.example # Example environment variables
 ├── .gitignore
 ├── docker-compose.yml
 ├── Makefile
