@@ -2,20 +2,15 @@
 
 Building a personal finance dashboard to help track and categorize finances.
 
-## Features
+## Features (In Progress)
 - **User Authentication**: Secure login and signup functionality
-
-(In Progress)
-- **Bank Account Management**: Add and manage multiple bank accounts
-- **Transaction Tracking**: Record and categorize financial transactions
-- **Subscription Management**: Track recurring subscriptions and billing cycles
-- **Dashboard Overview**: Visual summary of financial status
 - **Dark/Light Mode**: Toggle between dark and light themes
+- **Dashboard Overview**: Visual financial summary for multiple bank accounts
+- **Transaction Tracking**: Categorize financial transactions
 
 ## Tech Stack
 - Next.js
 - Tailwind CSS
-- FastAPI
 - Docker
 - MySQL
 
@@ -25,8 +20,6 @@ Building a personal finance dashboard to help track and categorize finances.
 finance-tracker/
 ├── project/
 │ ├── app/
-│ │ ├── about # About page
-│ │ ├── analytics # Analytics page
 │ │ ├── api/
 │ │ │ ├── auth/ # Authentication API routes
 │ │ │     ├── login/ # Login route
