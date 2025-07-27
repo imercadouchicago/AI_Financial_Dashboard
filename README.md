@@ -92,8 +92,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ![Landing Page](./assets/Landing.png)
 
 ![Login Page](./assets/Login.png)
-
-## Contact
-Isabella Mercado - imercado@uchicago.edu
-
-Project Link: https://github.com/imercadouchicago/AI_Financial_Dashboard
