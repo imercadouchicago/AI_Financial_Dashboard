@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f5f5dc; /* beige */
+    --foreground: #000000; /* black */
+  }
+
+  [data-theme='dark'] {
+    --background: #1a1a1a; /* dark background */
+    --foreground: #f5f5dc; /* beige text */
+  }
+
+  /* Apply background and text color to body */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
