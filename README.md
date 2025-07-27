@@ -1,4 +1,4 @@
-# Finance Tracker Dashboard
+# Financial Dashboard
 
 Building a personal finance dashboard to help track and categorize finances.
 
@@ -96,4 +96,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Contact
 Isabella Mercado - imercado@uchicago.edu
 
-Project Link: https://github.com/imercadouchicago/
+Project Link: https://github.com/imercadouchicago/AI_Financial_Dashboard
